@@ -1,11 +1,11 @@
 {% set provider = "vsphere" %}
-{% set version = "1.4.1" %}
+{% set version = "1.5.0" %}
 
 {% set name = "terraform-provider-" + provider %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
 
-{% set sha256 = "5332c10f601e1400551699f269945bc505a922ce8fbe28e3796b01487a30730b" %}
-{% set sha256_win64 = "3e56035b9a1f58e37a21b614b57044c2752b6c9da1bb77ecc2989095e82c6295" %}
+{% set sha256 = "70dab37fdf253601366a486df1d0104fcf007caf1edd470aadf547fd4d868542" %}
+{% set sha256_win64 = "ef7d45c44b3dbae441313d137c5e98b6025ba1fecbf8071029020bb091897de1" %}
 
 package:
   name: {{ name|lower }}
