@@ -1,11 +1,8 @@
 {% set provider = "vsphere" %}
-{% set version = "1.6.0" %}
+{% set version = "1.7.0" %}
 
 {% set name = "terraform-provider-" + provider %}
 {% set x4_plugin = name + '_v' + version + "_x4" %}
-
-{% set sha256 = "4f40d1ebea0d504596f3f0243ede24b92446bd25b013dede4714657900c1abd2" %}
-{% set sha256_win64 = "bd7c95516b0780d6bd7d0419ad3f9b8c01e77857dd5346dc685d977f1ec8e00b" %}
 
 package:
   name: {{ name|lower }}
@@ -14,13 +11,13 @@ package:
 source:
   - folder: src/github.com/terraform-providers/{{ name|lower }}
     url: https://github.com/terraform-providers/{{ name }}/archive/v{{ version }}.tar.gz  # [not win]
-    sha256: {{ sha256 }}  # [not win]
+    sha256: d9a6da85bfa0bf7a33cf68f5f16f1affb6397c062435fcef422ff5e66d731c2e  # [not win]
 
     url: https://releases.hashicorp.com/{{ name }}/{{ version }}/{{ name }}_{{ version }}_windows_amd64.zip  # [win64]
-    sha256: {{ sha256_win64 }}  # [win64]
+    sha256: 3ab874737fe834c9823a682abc46ce1e561e3d794f81ed1d29f4c854e6439a6a  # [win64]
 
 build:
-  number: 1001
+  number: 0
   script:
     - XCOPY src\github.com\terraform-providers\{{ name|lower }}\{{ x4_plugin }}.exe %LIBRARY_BIN%  # [win]
 
