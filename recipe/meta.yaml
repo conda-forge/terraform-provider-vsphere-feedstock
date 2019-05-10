@@ -1,6 +1,6 @@
 {% set provider = "vsphere" %}
 {% set goname = "github.com/terraform-providers/terraform-provider-"+provider.lower() %}
-{% set version = "1.10.0" %}
+{% set version = "1.11.0" %}
 
 {% set name = "terraform-provider-" + provider %}
 {% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
@@ -14,7 +14,7 @@ package:
 source:
   - folder: {{ pkg_src }}
     url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: 12668e9f29cfb0af929d0284004c69a4b79f3c74c507dd8dcf2bd8b31e94c5b5
+    sha256: 13bcab768130c8f6f4b10e7abc335a199bdd0f6338cb4262c17850c7b75632b6
 
 build:
   number: 0
@@ -29,7 +29,7 @@ requirements:
     - {{ compiler('go') }} >=1.11.3
   run:
     - terraform >=0.10  # [unix]
-    - terraform >=0.11.11 # [win]
+    - terraform >=0.11.11  # [win]
 
 test:
   requires:
