@@ -3,7 +3,6 @@
 {% set version = "1.13.0" %}
 
 {% set name = "terraform-provider-" + provider %}
-{% set pkg_src = ('src/'+goname).replace("/",os.sep) %}
 
 {% set x4_plugin = name + '_v' + version + "_x4" + (".exe" if win else "")%}
 
@@ -12,14 +11,12 @@ package:
   version: {{ version }}
 
 source:
-  - folder: {{ pkg_src }}
-    url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-    sha256: d541fa5179854e891659c486ca72a86099fec958f5cf1482b48842e676c744d1
+  url: https://{{ goname }}/archive/v{{ version }}.tar.gz
+  sha256: d541fa5179854e891659c486ca72a86099fec958f5cf1482b48842e676c744d1
 
 build:
   number: 0
   script:
-    - pushd {{ pkg_src }}
     - go build -v -o $GOBIN/{{ x4_plugin }} .  # [unix]
     - go build -v -o %GOBIN%\{{ x4_plugin }} .  # [win]
 
