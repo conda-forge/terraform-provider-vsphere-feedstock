@@ -1,6 +1,6 @@
 {% set provider = "vsphere" %}
 {% set goname = "github.com/terraform-providers/terraform-provider-"+provider.lower() %}
-{% set version = "1.23.0" %}
+{% set version = "1.24.0" %}
 
 {% set name = "terraform-provider-" + provider %}
 
@@ -12,7 +12,7 @@ package:
 
 source:
   url: https://{{ goname }}/archive/v{{ version }}.tar.gz
-  sha256: bb74488ff547f668f4a0420232dcb1beef18c16b6348604dd89efb7e1b3862fa
+  sha256: 61b12d923fb6e050432b32af7f6bcb61773e0aa4e56247823f8b68ff778249f9
 
 build:
   number: 0
