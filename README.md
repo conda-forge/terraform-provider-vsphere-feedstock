@@ -5,11 +5,13 @@ Home: https://www.terraform.io
 
 Package license: MPL-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/terraform-provider-vsphere-feedstock/blob/master/LICENSE.txt)
 
 Summary: The Terraform VMware vSphere provider
 
+Development: https://github.com/terraform-providers/terraform-provider-vsphere
 
+Documentation: https://www.terraform.io/docs/providers/vsphere/index.html
 
 Current build status
 ====================
